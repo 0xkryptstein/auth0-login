@@ -7,7 +7,8 @@ import { LogoutButton } from "@/components/logout-button";
 import React from "react";
 
 const NavBar = () => {
-  const { user, error, isLoading } = useUser();
+  const { user, isLoading } = useUser();
+  // const { user, error, isLoading } = useUser();
 
   return (
     <div

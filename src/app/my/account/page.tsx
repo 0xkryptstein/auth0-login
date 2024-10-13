@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import { getSession, withPageAuthRequired } from "@auth0/nextjs-auth0";
-
+import Image from "next/image";
 import React from "react";
 
 const Account: NextPage = withPageAuthRequired(
@@ -13,7 +13,7 @@ const Account: NextPage = withPageAuthRequired(
           Protected User Dashboard
         </h1>
 
-        <img src={user.picture} alt={user.name} />
+        <Image src={user.picture} alt={user.name} />
         <h2>{user.name}</h2>
         <p>{user.email}</p>
       </div>
