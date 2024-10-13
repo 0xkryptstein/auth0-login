@@ -3,10 +3,16 @@ import { getSession, withPageAuthRequired } from "@auth0/nextjs-auth0";
 import Image from "next/image";
 import React from "react";
 
+type User = {
+  name: string;
+  email: string;
+  picture: string;
+};
+
 const Account: NextPage = withPageAuthRequired(
   async () => {
     const session = await getSession();
-    const user: any = session?.user;
+    const user = session?.user as User;
     return (
       <div className="content-layout px-44">
         <h1 style={{ marginTop: "2rem", marginBottom: "2rem" }}>
